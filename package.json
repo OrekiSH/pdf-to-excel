@@ -1,6 +1,6 @@
 {
   "name": "pdf-to-excel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert PDFs to editable Excel spreadsheets",
   "scripts": {
     "build": "babel src -d lib --no-comments",

@@ -1,6 +1,6 @@
 {
   "name": "pdf-to-excel",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Convert PDFs to editable Excel spreadsheets",
   "main": "lib/index.js",
   "scripts": {

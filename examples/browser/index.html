@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <main id="app">
+    <button id="btn">convert</button>
+    <p id="pct"></p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.3.200/pdf.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.5/xlsx.full.min.js"></script>
+  <script src="/lib/index.js"></script>
+
+  <script>
+    const $ = s => document.querySelector(s);
+
+    const p = $('#pct');
+    const btn = $('#btn');
+    
+    btn.addEventListener('click', () => {
+      if (btn.disabled) return;
+      btn.disabled = true;
+
+      try {
+        pdf2excel.genXlsx('/examples/bar.pdf', 'bar.xlsx', {
+          onProgress: (e) => {
+            p.innerHTML = `${e.numPage} / ${e.numPages}`;
+            if (e.numPage === e.numPages) {
+              btn.disabled = false;
+              p.innerHTML = '';
+            }
+          },
+        });
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>

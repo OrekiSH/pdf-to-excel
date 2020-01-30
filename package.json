@@ -2,9 +2,10 @@
   "name": "pdf-to-excel",
   "version": "0.1.0",
   "description": "Convert PDFs to editable Excel spreadsheets",
-  "main": "index.js",
   "scripts": {
-    "build": "webpack --progress"
+    "build": "babel src -d lib --no-comments",
+    "lint": "eslint src/index.js",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,13 +23,16 @@
   },
   "homepage": "https://github.com/OrekiSH/pdf-to-excel#readme",
   "dependencies": {
-    "@babel/core": "^7.8.3",
-    "babel-loader": "^8.0.6",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
     "pdfjs-dist": "^2.2.228",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
     "xlsx": "^0.15.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-modules-umd": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
   }
 }

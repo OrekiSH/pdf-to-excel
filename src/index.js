@@ -1,5 +1,6 @@
-import pdfjsLib from 'pdfjs-dist'; // https://babeljs.io/docs/en/babel-plugin-transform-modules-umd#default-semantics
+import { getDocument } from 'pdfjs-dist'; // https://babeljs.io/docs/en/babel-plugin-transform-modules-umd#default-semantics
 import XLSX from 'xlsx';
+import 'regenerator-runtime/runtime';
 
 // utils
 // eslint-disable-next-line
@@ -23,7 +24,7 @@ export async function genTextContextMatrix(path, options = {}) {
     numPages = end;
   }
 
-  const pdf = await pdfjsLib.getDocument(path);
+  const pdf = await getDocument(path).promise;
   // set end
   if (typeof pdf.numPages === 'number' && numPages === 0) {
     numPages = pdf.numPages;

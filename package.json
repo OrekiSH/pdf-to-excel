@@ -1,6 +1,6 @@
 {
   "name": "pdf-to-excel",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Convert PDFs to editable Excel spreadsheets",
   "main": "lib/index.js",
   "scripts": {
@@ -24,16 +24,17 @@
   },
   "homepage": "https://github.com/OrekiSH/pdf-to-excel#readme",
   "dependencies": {
-    "pdfjs-dist": "^2.2.228",
-    "xlsx": "^0.15.5"
+    "pdfjs-dist": "^2.6.347",
+    "regenerator-runtime": "^0.13.7",
+    "xlsx": "^0.16.9"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
-    "@babel/plugin-transform-modules-umd": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.0"
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-transform-modules-umd": "^7.13.0",
+    "@babel/preset-env": "^7.13.12",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
